@@ -24,6 +24,7 @@ class _SelectLocationState extends State<SelectLocation> {
   late String _state;
   late String _town;
 
+  bool resetState = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -93,6 +94,7 @@ class _SelectLocationState extends State<SelectLocation> {
                 onChanged: (value) {
                   setState(() {
                     _chose = true;
+                    resetState = !resetState;
                     print(value);
                     _state = value.toString();
                     getTowns(value.toString().trim());
@@ -141,7 +143,7 @@ class _SelectLocationState extends State<SelectLocation> {
                     ),
                   ),
                   showSearchBox: true,
-                  // selectedItem: _resetState ? "" : "ရှာမည်",
+                  selectedItem: resetState ? "" : "ရှာမည်",
                   showSelectedItems: true,
                   mode: Mode.DIALOG,
                   autoValidateMode: AutovalidateMode.disabled,
@@ -151,6 +153,8 @@ class _SelectLocationState extends State<SelectLocation> {
                   onChanged: (value) {
                     print(value);
                     _town = value.toString();
+                    setState(() {
+                    });
                   },
                 ),
               ),
@@ -204,6 +208,9 @@ class _SelectLocationState extends State<SelectLocation> {
                   ],
                   onChanged: (value) {
                     print(value);
+                    setState(() {
+
+                    });
                   },
                 ),
               ),

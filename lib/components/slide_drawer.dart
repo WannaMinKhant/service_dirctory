@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:service_directory/admin/adding_service.dart';
 import 'package:service_directory/screens/mapbox_map.dart';
 import 'package:service_directory/screens/my_geolocation.dart';
 import 'package:service_directory/screens/realtime_locatoin.dart';
@@ -58,10 +59,10 @@ class SlideDrawer extends StatelessWidget {
           ),
           Divider(height: 5,thickness: 2,),
           ListTile(
-            title: Text("Help"),
+            title: Text("Admin Panel"),
             leading: Icon(Icons.view_list_outlined),
             onTap: () {
-              // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> MapBoxMapStatus()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> AddingServices()));
             },
           ),
           Divider(height: 5,thickness: 2,),
